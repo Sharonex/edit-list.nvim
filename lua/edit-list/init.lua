@@ -59,15 +59,19 @@ function M.appendNewCursorPos()
     table.insert(M.EditTable, curr_pos)
 end
 
+function M.CallEditList()
+    require("edit-list.ui").EditListTelescope(M.GetEditTable, M.opts)
+end
+
 function M.setup(opts)
     M.opts = vim.tbl_extend("force", M.opts, opts or {})
 
-    vim.api.nvim_create_user_command('EditList', "lua local mod=require(\"edit-list\"); require(\"edit-list.ui\").EditListTelescope(mod.GetEditTable, mod.opts)", {})
+    require("telescope").load_extension("edit-list")
+    vim.api.nvim_create_user_command('EditList', "lua require(\"edit-list\").CallEditList()", {})
     vim.api.nvim_create_autocmd({"TextChangedI", "TextChanged"}, {
         pattern = {"*.*"},
         callback = M.appendNewCursorPos
     })
-
 end
 
 return M
