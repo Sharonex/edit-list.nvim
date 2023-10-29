@@ -9,7 +9,7 @@ This README.md will guide you through the installation, usage, and customization
 ## Features
 
 - Track and maintain a list of all locations with changes in your project.
-- Navigate to these locations with ease.
+- Telescope interfae allowing to navigate to these locations with ease.
 - Supports multiple projects, allowing you to manage changes in various codebases efficiently.
 
 ## Installation
@@ -18,6 +18,7 @@ This README.md will guide you through the installation, usage, and customization
 ```
     {
         "Sharonex/edit-list.nvim",
+        dependencies = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" }
         config = function()
             require("edit-list").setup()
         end,
@@ -48,3 +49,8 @@ You can customize the plugin's behavior by setting various options in your Neovi
 " Define a custom keybinding to list tracked locations.
 nnoremap <leader>ll :EditList<CR>
 ```
+
+## Acknowledgments
+
+Some very shameless copying from [https://github.com/ThePrimeagen/harpoon](Harpoon) around saving the edit history to disk(to work between sessions)
+
