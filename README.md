@@ -6,6 +6,8 @@ The edit-list.nvim is a plugin that helps you keep track of all the locations wh
 
 This README.md will guide you through the installation, usage, and customization of this plugin.
 
+![GIF speed changer](https://github.com/Sharonex/edit-list.nvim/assets/10423841/e733bb9c-bd81-4520-a0bc-40206b349647)
+
 ## Features
 
 - Track and maintain a list of all locations with changes in your project.
